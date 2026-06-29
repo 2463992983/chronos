@@ -1,0 +1,86 @@
+﻿@page "/"
+@inject LessonService LessonService
+
+<PageTitle>Godot 学习站 - 首页</PageTitle>
+
+<section class="hero">
+  <div class="hero-content">
+    <span class="hero-badge">Godot 4.x 教程</span>
+    <h1>从零开始学习 Godot 游戏引擎</h1>
+    <p class="hero-desc">
+      免费、开源的 2D/3D 游戏引擎。本站提供系统化中文教程，
+      涵盖安装配置、GDScript、节点场景、2D 实战与 UI 设计。
+    </p>
+    <div class="hero-actions">
+      <a class="btn btn-godot" href="tutorials">开始学习</a>
+      <a class="btn btn-outline-light" href="intro">了解 Godot</a>
+    </div>
+  </div>
+  <div class="hero-stats">
+    <div class="stat-card">
+      <span class="stat-num">@LessonService.GetAll().Count</span>
+      <span class="stat-label">篇教程</span>
+    </div>
+    <div class="stat-card">
+      <span class="stat-num">@LessonService.GetCategories().Count</span>
+      <span class="stat-label">个分类</span>
+    </div>
+    <div class="stat-card">
+      <span class="stat-num">100%</span>
+      <span class="stat-label">免费开源</span>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <h2>学习路线</h2>
+  <div class="home-tracks">
+    <a class="home-track-card" href="tutorials">
+      <span class="home-track-icon">🐍</span>
+      <h3>GDScript 路线</h3>
+      <p>从单机到联机，炼气筑基结丹系统化学习</p>
+    </a>
+    <a class="home-track-card" href="tutorials">
+      <span class="home-track-icon">⚡</span>
+      <h3>C# 路线</h3>
+      <p>基于 .NET 的 Godot 开发，适合团队与大型项目</p>
+    </a>
+    <a class="home-track-card" href="tutorials">
+      <span class="home-track-icon">⏳</span>
+      <h3>Chronos 框架</h3>
+      <p>结构化游戏框架，快速搭建项目骨架</p>
+    </a>
+  </div>
+  <div class="roadmap">
+    @foreach (var cat in LessonService.GetCategories())
+    {
+      <div class="roadmap-card">
+        <span class="roadmap-icon">@cat.Icon</span>
+        <h3>@cat.Name</h3>
+        <p>@cat.Description</p>
+      </div>
+    }
+  </div>
+</section>
+
+<section class="section features">
+  <h2>为什么选择 Godot？</h2>
+  <div class="feature-grid">
+    <div class="feature-card">
+      <h3>完全免费</h3>
+      <p>MIT 开源协议，无版权分成，个人与商业项目均可免费使用。</p>
+    </div>
+    <div class="feature-card">
+      <h3>轻量高效</h3>
+      <p>安装包仅约 40MB，启动迅速，低配电脑也能流畅开发。</p>
+    </div>
+    <div class="feature-card">
+      <h3>双语言支持</h3>
+      <p>原生 GDScript 简单易学，同时支持 C# 满足大型项目需求。</p>
+    </div>
+    <div class="feature-card">
+      <h3>2D 特别强</h3>
+      <p>2D 工作流业界领先，像素游戏、平台跳跃等类型开发体验极佳。</p>
+    </div>
+  </div>
+</section>

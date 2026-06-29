@@ -1,0 +1,111 @@
+@page "/tutorials"
+@using Godot_Learning_WebSite.Models
+@inject LessonService LessonService
+
+<PageTitle>学习路线图</PageTitle>
+
+<div class="tutorials-page">
+    <header class="page-header">
+        <h1>学习路线图</h1>
+        <p>选择路线 → 模块 → 2D/3D，再按炼气 → 筑基 → 结丹循序渐进</p>
+    </header>
+
+    <div class="roadmap-nav @TrackNavClass @ModuleNavClass @DimensionNavClass">
+        <div class="track-selector">
+            @foreach (var track in RoadmapTracks.All)
+            {
+                <button type="button"
+                        class="track-btn @(selectedTrack == track ? "active" : "")"
+                        @onclick="() => SelectTrack(track)">
+                    <span class="track-btn-icon">@RoadmapTracks.GetIcon(track)</span>
+                    <span class="track-btn-label">@RoadmapTracks.GetLabel(track)</span>
+                    <span class="track-btn-desc">@RoadmapTracks.GetDescription(track)</span>
+                </button>
+            }
+        </div>
+
+        <div class="nav-bridge nav-bridge--tracks" aria-hidden="true">
+            <div class="bridge-line bridge-line-col-1"></div>
+            <div class="bridge-line bridge-line-col-2"></div>
+            <div class="bridge-line bridge-line-col-3"></div>
+            <div class="bridge-rail"></div>
+        </div>
+
+        <div class="module-selector">
+            @foreach (var module in RoadmapModules.All)
+            {
+                <button type="button"
+                        class="nav-tier-btn module-btn @(selectedModule == module ? "active" : "")"
+                        @onclick="() => SelectModule(module)">
+                    <span class="nav-tier-btn-icon">@RoadmapModules.GetIcon(module)</span>
+                    <span class="nav-tier-btn-text">
+                        <span class="nav-tier-btn-label">@module</span>
+                        <span class="nav-tier-btn-desc">@RoadmapModules.GetDescription(module)</span>
+                    </span>
+                </button>
+            }
+        </div>
+
+        <div class="nav-bridge nav-bridge--secondary" aria-hidden="true">
+            <div class="bridge-line bridge-line-left"></div>
+            <div class="bridge-line bridge-line-right"></div>
+            <div class="bridge-rail"></div>
+        </div>
+
+        <div class="dimension-selector">
+            @foreach (var dimension in RoadmapDimensions.All)
+            {
+                <button type="button"
+                        class="nav-tier-btn dimension-btn @(selectedDimension == dimension ? "active" : "")"
+                        @onclick="() => SelectDimension(dimension)">
+                    <span class="nav-tier-btn-icon">@RoadmapDimensions.GetIcon(dimension)</span>
+                    <span class="nav-tier-btn-text">
+                        <span class="nav-tier-btn-label">@dimension</span>
+                        <span class="nav-tier-btn-desc">@RoadmapDimensions.GetDescription(dimension)</span>
+                    </span>
+                </button>
+            }
+        </div>
+    </div>
+
+    @foreach (var stage in RoadmapStages.All)
+    {
+        var stageLessons = LessonService
+            .GetByPathAndStage(selectedTrack, selectedModule, selectedDimension, stage)
+            .ToList();
+        if (stageLessons.Count == 0) continue;
+
+        <section class="roadmap-stage">
+            <div class="roadmap-stage-header">
+                <h2>@stage</h2>
+                <p>@RoadmapStages.GetDescription(stage)</p>
+            </div>
+            <div class="tutorial-card-grid">
+                @foreach (var lesson in stageLessons)
+                {
+                    <TutorialCard Lesson="lesson" />
+                }
+            </div>
+        </section>
+    }
+</div>
+
+@code {
+    private LearningTrack selectedTrack = LearningTrack.GdScript;
+    private string selectedModule = RoadmapModules.All[0];
+    private string selectedDimension = RoadmapDimensions.All[0];
+
+    private string TrackNavClass => $"track-active-col-{RoadmapTracks.GetColumnIndex(selectedTrack)}";
+
+    private string ModuleNavClass =>
+        selectedModule == RoadmapModules.All[0] ? "module-active-left" : "module-active-right";
+
+    private string DimensionNavClass =>
+        selectedDimension == RoadmapDimensions.All[0] ? "dimension-active-left" : "dimension-active-right";
+
+    private void SelectTrack(LearningTrack track) => selectedTrack = track;
+
+    private void SelectModule(string module) => selectedModule = module;
+
+    private void SelectDimension(string dimension) => selectedDimension = dimension;
+}

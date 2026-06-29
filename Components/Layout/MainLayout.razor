@@ -1,0 +1,23 @@
+﻿@inherits LayoutComponentBase
+
+<div class="page">
+    <div class="sidebar">
+        <NavMenu />
+    </div>
+
+    <main>
+        <div class="main-top-bar">
+            <span class="main-top-bar-title">Godot 学习站</span>
+            <a class="main-top-bar-link" href="https://godotengine.org" target="_blank" rel="noopener">Godot 官网 ↗</a>
+        </div>
+        <article class="content px-4">
+            @Body
+        </article>
+    </main>
+</div>
+
+<div id="blazor-error-ui">
+    发生未处理的错误。
+    <a href="" class="reload">重新加载</a>
+    <a class="dismiss">🗙</a>
+</div>

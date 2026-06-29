@@ -1,0 +1,48 @@
+@page "/concepts"
+
+<PageTitle>核心概念</PageTitle>
+
+<article class="article-page">
+  <header class="article-header">
+    <h1>Godot 核心概念速查</h1>
+    <p class="article-meta">快速理解 Godot 的设计哲学</p>
+  </header>
+
+  <div class="concepts-grid">
+    <div class="concept-card">
+      <h2>节点 Node</h2>
+      <p>引擎的基本构建块。每个节点负责一项功能（渲染、物理、音频等）。</p>
+      <code class="inline-hint">extends Node2D</code>
+    </div>
+    <div class="concept-card">
+      <h2>场景 Scene</h2>
+      <p>节点树保存为 .tscn 文件。场景可实例化、可嵌套，是复用的基本单位。</p>
+      <code class="inline-hint">preload("res://player.tscn")</code>
+    </div>
+    <div class="concept-card">
+      <h2>信号 Signal</h2>
+      <p>观察者模式的事件机制。节点发射信号，其他节点连接并响应，实现解耦。</p>
+      <code class="inline-hint">signal died</code>
+    </div>
+    <div class="concept-card">
+      <h2>资源 Resource</h2>
+      <p>数据资产：纹理、音频、脚本、材质等。保存在 res:// 目录下。</p>
+      <code class="inline-hint">res://assets/sprite.png</code>
+    </div>
+    <div class="concept-card">
+      <h2>场景树 Tree</h2>
+      <p>运行时所有节点的层级结构。通过 get_node() 或 $ 简写访问子节点。</p>
+      <code class="inline-hint">$Sprite2D.visible = false</code>
+    </div>
+    <div class="concept-card">
+      <h2>主循环 Loop</h2>
+      <p>_process 每帧调用（渲染帧），_physics_process 按固定间隔调用（物理帧）。</p>
+      <code class="inline-hint">func _process(delta): ...</code>
+    </div>
+  </div>
+
+  <div class="callout">
+    <p>想深入了解？从第一课开始系统学习。</p>
+    <a class="btn btn-godot" href="lesson/install">第一课：安装 Godot →</a>
+  </div>
+</article>

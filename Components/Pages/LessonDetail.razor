@@ -1,0 +1,74 @@
+@page "/lesson/{Slug}"
+@using Godot_Learning_WebSite.Models
+@using LessonModel = Godot_Learning_WebSite.Models.Lesson
+@inject LessonService LessonService
+
+<PageTitle>@(lesson?.Title ?? "教程")</PageTitle>
+
+@if (lesson is null)
+{
+  <div class="not-found">
+    <h1>教程未找到</h1>
+    <p>请检查链接是否正确。</p>
+    <a class="btn btn-godot" href="tutorials">返回教程列表</a>
+  </div>
+}
+else
+{
+  <article class="lesson-page">
+    <nav class="breadcrumb">
+      <a href="">首页</a> /
+      <a href="tutorials">教程</a> /
+      <span>@lesson.Title</span>
+    </nav>
+
+    <header class="lesson-header">
+      <span class="lesson-badge">@RoadmapTracks.GetShortName(lesson.Track) · @lesson.Module · @lesson.Dimension · @lesson.Stage · 第 @lesson.Order 课</span>
+      <h1>@lesson.Title</h1>
+      <p class="lesson-summary">@lesson.Summary</p>
+      <p class="lesson-price @(LessonPricing.IsFree(lesson.Price) ? "is-free" : "is-paid")">
+        价格：@LessonPricing.Format(lesson.Price)
+      </p>
+    </header>
+
+    <LessonContent Content="lesson.Sections" />
+
+    <footer class="lesson-nav">
+      @if (prevLesson is not null)
+      {
+        <a class="lesson-nav-link prev" href="lesson/@prevLesson.Slug">
+          ← @prevLesson.Title
+        </a>
+      }
+      else { <span></span> }
+
+      @if (nextLesson is not null)
+      {
+        <a class="lesson-nav-link next" href="lesson/@nextLesson.Slug">
+          @nextLesson.Title →
+        </a>
+      }
+    </footer>
+  </article>
+}
+
+@code {
+  [Parameter]
+  public string Slug { get; set; } = "";
+
+  private LessonModel? lesson;
+  private LessonModel? prevLesson;
+  private LessonModel? nextLesson;
+
+  protected override void OnParametersSet()
+  {
+    lesson = LessonService.GetBySlug(Slug);
+    if (lesson is not null)
+    {
+      var pathLessons = LessonService.GetByPath(lesson.Track, lesson.Module, lesson.Dimension).ToList();
+      var index = pathLessons.FindIndex(l => l.Slug == Slug);
+      prevLesson = index > 0 ? pathLessons[index - 1] : null;
+      nextLesson = index < pathLessons.Count - 1 ? pathLessons[index + 1] : null;
+    }
+  }
+}

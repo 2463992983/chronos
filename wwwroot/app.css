@@ -1,0 +1,1024 @@
+:root {
+    --godot-blue: #478cbf;
+    --godot-blue-dark: #3a6d9e;
+    --godot-accent: #5cb8ff;
+    --bg-main: #f0f4f8;
+    --bg-card: #ffffff;
+    --text-primary: #1a2a3a;
+    --text-secondary: #5a6a7a;
+    --border: #dde4ec;
+    --code-bg: #1e2a38;
+}
+
+html, body {
+    font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif;
+    color: var(--text-primary);
+    background: var(--bg-main);
+}
+
+a, .btn-link {
+    color: var(--godot-blue);
+}
+
+.content {
+    padding-top: 1.5rem;
+    padding-bottom: 3rem;
+    max-width: 1100px;
+}
+
+/* Buttons */
+.btn-godot {
+    background: var(--godot-blue);
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1.25rem;
+    border-radius: 6px;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background 0.2s;
+}
+
+.btn-godot:hover {
+    background: var(--godot-blue-dark);
+    color: #fff;
+}
+
+.btn-outline-light {
+    border: 1px solid rgba(255,255,255,0.6);
+    color: #fff;
+    padding: 0.5rem 1.25rem;
+    border-radius: 6px;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-outline-light:hover {
+    background: rgba(255,255,255,0.15);
+    color: #fff;
+}
+
+/* Hero */
+.hero {
+    background: linear-gradient(135deg, #2d4a6f 0%, #478cbf 60%, #5cb8ff 100%);
+    color: #fff;
+    border-radius: 12px;
+    padding: 2.5rem;
+    margin-bottom: 2.5rem;
+}
+
+.hero-badge {
+    background: rgba(255,255,255,0.2);
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+}
+
+.hero h1 {
+    font-size: 2rem;
+    margin: 1rem 0 0.75rem;
+}
+
+.hero-desc {
+    opacity: 0.9;
+    max-width: 600px;
+    line-height: 1.7;
+}
+
+.hero-actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.hero-stats {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+}
+
+.stat-card {
+    background: rgba(255,255,255,0.15);
+    border-radius: 8px;
+    padding: 1rem 1.5rem;
+    text-align: center;
+    min-width: 100px;
+}
+
+.stat-num {
+    display: block;
+    font-size: 1.75rem;
+    font-weight: 700;
+}
+
+.stat-label {
+    font-size: 0.85rem;
+    opacity: 0.85;
+}
+
+/* Sections */
+.section {
+    margin-bottom: 2.5rem;
+}
+
+.section h2 {
+    margin-bottom: 1.25rem;
+    color: var(--text-primary);
+}
+
+.roadmap {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 1rem;
+}
+
+.roadmap-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 1.25rem;
+}
+
+.roadmap-icon {
+    font-size: 1.5rem;
+}
+
+.roadmap-card h3 {
+    margin: 0.5rem 0;
+}
+
+.roadmap-card ul {
+    padding-left: 1.2rem;
+    margin: 0.5rem 0 0;
+    font-size: 0.9rem;
+}
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1rem;
+}
+
+.feature-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 1.25rem;
+}
+
+.feature-card h3 {
+    color: var(--godot-blue);
+    font-size: 1rem;
+}
+
+/* Article pages */
+.article-page, .lesson-page {
+    max-width: 800px;
+}
+
+.article-header, .lesson-header {
+    margin-bottom: 2rem;
+}
+
+.article-meta, .lesson-summary {
+    color: var(--text-secondary);
+}
+
+.info-grid, .concepts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1rem;
+    margin: 1.5rem 0;
+}
+
+.info-card, .concept-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1rem;
+}
+
+.concept-card h2 {
+    font-size: 1.1rem;
+    color: var(--godot-blue);
+}
+
+.inline-hint {
+    display: block;
+    margin-top: 0.5rem;
+    background: var(--code-bg);
+    color: #a8d4ff;
+    padding: 0.4rem 0.6rem;
+    border-radius: 4px;
+    font-size: 0.85rem;
+}
+
+.tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 1rem 0;
+}
+
+.tag {
+    background: #e8f0fa;
+    color: var(--godot-blue);
+    padding: 0.3rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+}
+
+.callout {
+    background: #e8f0fa;
+    border-left: 4px solid var(--godot-blue);
+    padding: 1.25rem;
+    border-radius: 0 8px 8px 0;
+    margin-top: 2rem;
+}
+
+/* Tutorials roadmap */
+.tutorials-page .page-header {
+    margin-bottom: 1.5rem;
+}
+
+.roadmap-nav {
+    margin-bottom: 2.5rem;
+}
+
+.track-selector {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-bottom: 0;
+}
+
+.track-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
+    padding: 1.15rem 1.25rem;
+    border: 2px solid var(--border);
+    border-radius: 12px;
+    background: var(--bg-card);
+    cursor: pointer;
+    text-align: left;
+    transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
+    min-width: 0;
+}
+
+.track-btn:hover {
+    border-color: var(--godot-blue);
+    box-shadow: 0 2px 12px rgba(71, 140, 191, 0.12);
+}
+
+.track-btn.active {
+    border-color: var(--godot-blue);
+    background: linear-gradient(135deg, #e8f4fc 0%, #f0f8ff 100%);
+    box-shadow: 0 2px 12px rgba(71, 140, 191, 0.18);
+}
+
+.track-btn-icon {
+    font-size: 1.5rem;
+}
+
+.track-btn-label {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    line-height: 1.3;
+}
+
+.track-btn-desc {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    line-height: 1.4;
+}
+
+/* Connector lines */
+.nav-bridge {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 36px;
+    position: relative;
+    margin: 0 0.25rem;
+}
+
+.nav-bridge--tracks {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.bridge-line {
+    justify-self: center;
+    width: 2px;
+    height: 100%;
+    background: #c8d8e8;
+    transition: background 0.2s;
+}
+
+.bridge-line-left,
+.bridge-line-col-1 {
+    grid-column: 1;
+}
+
+.bridge-line-right {
+    grid-column: 2;
+}
+
+.bridge-line-col-2 {
+    grid-column: 2;
+}
+
+.bridge-line-col-3 {
+    grid-column: 3;
+}
+
+.bridge-rail {
+    position: absolute;
+    bottom: 0;
+    left: 12.5%;
+    right: 12.5%;
+    height: 2px;
+    background: #c8d8e8;
+}
+
+.nav-bridge--tracks .bridge-rail {
+    left: 8%;
+    right: 8%;
+}
+
+/* Track → module: highlight active column */
+.roadmap-nav.track-active-col-1 > .nav-bridge--tracks .bridge-line-col-1,
+.roadmap-nav.active-left .bridge-line-left,
+.roadmap-nav.track-active-left > .nav-bridge:not(.nav-bridge--secondary):not(.nav-bridge--tracks) .bridge-line-left {
+    background: var(--godot-blue);
+}
+
+.roadmap-nav.track-active-col-2 > .nav-bridge--tracks .bridge-line-col-2 {
+    background: var(--godot-blue);
+}
+
+.roadmap-nav.track-active-col-3 > .nav-bridge--tracks .bridge-line-col-3,
+.roadmap-nav.active-right .bridge-line-right,
+.roadmap-nav.track-active-right > .nav-bridge:not(.nav-bridge--secondary):not(.nav-bridge--tracks) .bridge-line-right {
+    background: var(--godot-blue);
+}
+
+.roadmap-nav.track-active-col-1 > .nav-bridge--tracks .bridge-rail {
+    background: linear-gradient(90deg, var(--godot-blue) 0%, var(--godot-blue) 33%, #c8d8e8 33%, #c8d8e8 100%);
+}
+
+.roadmap-nav.track-active-col-2 > .nav-bridge--tracks .bridge-rail {
+    background: linear-gradient(90deg, #c8d8e8 0%, #c8d8e8 33%, var(--godot-blue) 33%, var(--godot-blue) 66%, #c8d8e8 66%, #c8d8e8 100%);
+}
+
+.roadmap-nav.track-active-col-3 > .nav-bridge--tracks .bridge-rail {
+    background: linear-gradient(90deg, #c8d8e8 0%, #c8d8e8 66%, var(--godot-blue) 66%, var(--godot-blue) 100%);
+}
+
+.roadmap-nav.active-left .bridge-rail,
+.roadmap-nav.track-active-left > .nav-bridge:not(.nav-bridge--secondary):not(.nav-bridge--tracks) .bridge-rail {
+    background: linear-gradient(90deg, var(--godot-blue) 0%, var(--godot-blue) 50%, #c8d8e8 50%, #c8d8e8 100%);
+}
+
+.roadmap-nav.active-right .bridge-rail,
+.roadmap-nav.track-active-right > .nav-bridge:not(.nav-bridge--secondary):not(.nav-bridge--tracks) .bridge-rail {
+    background: linear-gradient(90deg, #c8d8e8 0%, #c8d8e8 50%, var(--godot-blue) 50%, var(--godot-blue) 100%);
+}
+
+/* Level 2 → 3 connector highlights by selected module */
+.roadmap-nav.module-active-left .nav-bridge--secondary .bridge-line-left {
+    background: var(--godot-blue);
+}
+
+.roadmap-nav.module-active-right .nav-bridge--secondary .bridge-line-right {
+    background: var(--godot-blue);
+}
+
+.roadmap-nav.module-active-left .nav-bridge--secondary .bridge-rail {
+    background: linear-gradient(90deg, var(--godot-blue) 0%, var(--godot-blue) 50%, #c8d8e8 50%, #c8d8e8 100%);
+}
+
+.roadmap-nav.module-active-right .nav-bridge--secondary .bridge-rail {
+    background: linear-gradient(90deg, #c8d8e8 0%, #c8d8e8 50%, var(--godot-blue) 50%, var(--godot-blue) 100%);
+}
+
+/* Level 2 & 3 tier buttons (shared) */
+.module-selector,
+.dimension-selector {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin-top: 0;
+}
+
+.nav-tier-btn {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.65rem;
+    padding: 1rem 1.15rem;
+    border: 2px solid var(--border);
+    border-radius: 10px;
+    background: var(--bg-card);
+    cursor: pointer;
+    text-align: left;
+    transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
+}
+
+.nav-tier-btn::before {
+    content: "";
+    position: absolute;
+    top: -14px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 14px;
+    background: #c8d8e8;
+    transition: background 0.2s;
+}
+
+.nav-tier-btn:hover {
+    border-color: #7fb3d5;
+    box-shadow: 0 2px 8px rgba(71, 140, 191, 0.1);
+}
+
+.nav-tier-btn.active {
+    border-color: var(--godot-blue);
+    background: linear-gradient(135deg, #f4f9fd 0%, #fafcff 100%);
+    box-shadow: 0 2px 10px rgba(71, 140, 191, 0.14);
+}
+
+.nav-tier-btn.active::before {
+    background: var(--godot-blue);
+}
+
+.nav-tier-btn-icon {
+    font-size: 1.35rem;
+    line-height: 1;
+    flex-shrink: 0;
+    margin-top: 0.1rem;
+}
+
+.nav-tier-btn-text {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    min-width: 0;
+}
+
+.nav-tier-btn-label {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.nav-tier-btn.active .nav-tier-btn-label {
+    color: var(--godot-blue-dark);
+}
+
+.nav-tier-btn-desc {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    line-height: 1.4;
+}
+
+/* Level 3 slightly compact */
+.dimension-btn {
+    padding: 0.9rem 1.05rem;
+}
+
+.dimension-btn .nav-tier-btn-label {
+    font-size: 0.95rem;
+}
+
+.dimension-btn .nav-tier-btn-icon {
+    font-size: 1.25rem;
+}
+
+.roadmap-stage {
+    margin-bottom: 2.5rem;
+}
+
+.roadmap-stage-header {
+    margin-bottom: 1.25rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 2px solid var(--godot-blue);
+}
+
+.roadmap-stage-header h2 {
+    margin: 0 0 0.25rem;
+    font-size: 1.35rem;
+    color: var(--godot-blue-dark);
+}
+
+.roadmap-stage-header p {
+    margin: 0;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+.tutorial-card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.25rem;
+}
+
+.tutorial-card {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    background: var(--bg-card);
+    border: 1px solid #e0e0e0;
+    transition: box-shadow 0.2s, transform 0.15s;
+}
+
+.tutorial-card:hover {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+    transform: translateY(-2px);
+    color: inherit;
+}
+
+.tutorial-card-cover {
+    position: relative;
+    height: 160px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    text-align: center;
+    overflow: hidden;
+}
+
+.tutorial-card-cover-title {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: #fff;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    line-height: 1.2;
+}
+
+.tutorial-card-cover-sub {
+    margin-top: 0.5rem;
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.92);
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
+}
+
+.thumb-gdscript-solo {
+    background: linear-gradient(135deg, #1a5276 0%, #2e86c1 50%, #5dade2 100%);
+}
+
+.thumb-gdscript-qi {
+    background: linear-gradient(135deg, #6c3483 0%, #8e44ad 50%, #bb8fce 100%);
+}
+
+.thumb-gdscript-foundation {
+    background: linear-gradient(135deg, #1e6f50 0%, #27ae60 50%, #58d68d 100%);
+}
+
+.thumb-gdscript-golden {
+    background: linear-gradient(135deg, #b7950b 0%, #f1c40f 50%, #f9e79f 100%);
+}
+
+.thumb-csharp-solo {
+    background: linear-gradient(135deg, #1a252f 0%, #2c3e50 50%, #5d6d7e 100%);
+}
+
+.thumb-csharp-qi {
+    background: linear-gradient(135deg, #4a235a 0%, #7d3c98 50%, #a569bd 100%);
+}
+
+.thumb-csharp-foundation {
+    background: linear-gradient(135deg, #145a32 0%, #1e8449 50%, #52be80 100%);
+}
+
+.thumb-csharp-golden {
+    background: linear-gradient(135deg, #7e5109 0%, #d4ac0d 50%, #f7dc6f 100%);
+}
+
+.thumb-gdscript-online-qi {
+    background: linear-gradient(135deg, #1a5276 0%, #2980b9 50%, #85c1e9 100%);
+}
+
+.thumb-gdscript-online-foundation {
+    background: linear-gradient(135deg, #0e6655 0%, #16a085 50%, #76d7c4 100%);
+}
+
+.thumb-gdscript-online-golden {
+    background: linear-gradient(135deg, #784212 0%, #ca6f1e 50%, #f0b27a 100%);
+}
+
+.thumb-csharp-online-qi {
+    background: linear-gradient(135deg, #1b2631 0%, #34495e 50%, #85929e 100%);
+}
+
+.thumb-csharp-online-foundation {
+    background: linear-gradient(135deg, #145a32 0%, #239b56 50%, #82e0aa 100%);
+}
+
+.thumb-csharp-online-golden {
+    background: linear-gradient(135deg, #6e2c00 0%, #ba4a00 50%, #eb984e 100%);
+}
+
+.thumb-gdscript-3d-qi,
+.thumb-gdscript-3d-online-qi {
+    background: linear-gradient(135deg, #1a3a5c 0%, #3498db 50%, #aed6f1 100%);
+}
+
+.thumb-gdscript-3d-foundation,
+.thumb-gdscript-3d-online-foundation {
+    background: linear-gradient(135deg, #154360 0%, #2874a6 50%, #5dade2 100%);
+}
+
+.thumb-gdscript-3d-golden {
+    background: linear-gradient(135deg, #4a235a 0%, #7d3c98 50%, #c39bd3 100%);
+}
+
+.thumb-csharp-3d-qi,
+.thumb-csharp-3d-online-qi {
+    background: linear-gradient(135deg, #212f3d 0%, #566573 50%, #aeb6bf 100%);
+}
+
+.thumb-csharp-3d-foundation {
+    background: linear-gradient(135deg, #1b4f72 0%, #2e86c1 50%, #85c1e9 100%);
+}
+
+.thumb-chronos-qi,
+.thumb-chronos-online-qi {
+    background: linear-gradient(135deg, #4a3728 0%, #8b6914 50%, #d4ac6e 100%);
+}
+
+.thumb-chronos-foundation,
+.thumb-chronos-online-foundation {
+    background: linear-gradient(135deg, #5d4037 0%, #a1887f 50%, #d7ccc8 100%);
+}
+
+.thumb-chronos-golden,
+.thumb-chronos-online-golden {
+    background: linear-gradient(135deg, #6e2c00 0%, #ca6f1e 50%, #f8c471 100%);
+}
+
+.thumb-chronos-3d-qi,
+.thumb-chronos-3d-online-qi {
+    background: linear-gradient(135deg, #3e2723 0%, #795548 50%, #bcaaa4 100%);
+}
+
+.thumb-chronos-3d-foundation {
+    background: linear-gradient(135deg, #4e342e 0%, #8d6e63 50%, #d7ccc8 100%);
+}
+
+.tutorial-card-name {
+    margin: 0.75rem 1rem 0.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #e67e22;
+    text-align: center;
+}
+
+.tutorial-card-footer {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 0.75rem;
+    padding: 0 1rem 0.85rem;
+}
+
+.tutorial-card-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    font-size: 0.78rem;
+    color: #888;
+    flex: 1;
+    min-width: 0;
+}
+
+.tutorial-card-price {
+    flex-shrink: 0;
+    font-size: 1.05rem;
+    font-weight: 700;
+    padding: 0.2rem 0.55rem;
+    border-radius: 6px;
+    white-space: nowrap;
+}
+
+.tutorial-card-price.is-free {
+    color: #1e8449;
+    background: #eafaf1;
+}
+
+.tutorial-card-price.is-paid {
+    color: #c0392b;
+    background: #fdf2f0;
+}
+
+.lesson-price {
+    margin: 0.75rem 0 0;
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+.lesson-price.is-free {
+    color: #1e8449;
+}
+
+.lesson-price.is-paid {
+    color: #c0392b;
+}
+
+.home-tracks {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.home-track-card {
+    display: block;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 1.25rem;
+    text-decoration: none;
+    color: inherit;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.home-track-card:hover {
+    border-color: var(--godot-blue);
+    box-shadow: 0 2px 8px rgba(71, 140, 191, 0.15);
+    color: inherit;
+}
+
+.home-track-card h3 {
+    margin: 0.5rem 0;
+    color: var(--godot-blue);
+}
+
+.home-track-icon {
+    font-size: 1.75rem;
+}
+
+@media (max-width: 900px) {
+    .track-selector {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 640px) {
+    .track-selector,
+    .module-selector,
+    .dimension-selector {
+        grid-template-columns: 1fr;
+    }
+
+    .nav-bridge--tracks {
+        grid-template-columns: 1fr;
+    }
+
+    .bridge-line-col-2,
+    .bridge-line-col-3 {
+        display: none;
+    }
+
+    .roadmap-nav.track-active-col-2 .bridge-line-col-2,
+    .roadmap-nav.track-active-col-3 .bridge-line-col-3 {
+        display: block;
+        grid-column: 1;
+    }
+
+    .roadmap-nav.track-active-col-2 .bridge-line-col-1,
+    .roadmap-nav.track-active-col-3 .bridge-line-col-1 {
+        display: none;
+    }
+
+    .nav-bridge {
+        height: 24px;
+        margin: 0;
+    }
+
+    .bridge-line-left {
+        grid-column: 1;
+        justify-self: center;
+    }
+
+    .bridge-line-right {
+        display: none;
+    }
+
+    .roadmap-nav.track-active-right .bridge-line-right,
+    .roadmap-nav.active-right .bridge-line-right,
+    .roadmap-nav.module-active-right .nav-bridge--secondary .bridge-line-right {
+        display: block;
+        grid-column: 1;
+    }
+
+    .roadmap-nav.track-active-right .bridge-line-left,
+    .roadmap-nav.active-right .bridge-line-left,
+    .roadmap-nav.module-active-right .nav-bridge--secondary .bridge-line-left {
+        display: none;
+    }
+
+    .bridge-rail {
+        left: 50%;
+        right: auto;
+        width: 2px;
+        height: 100%;
+        bottom: auto;
+        top: 0;
+        transform: translateX(-50%);
+    }
+
+    .roadmap-nav.track-active-left .bridge-rail,
+    .roadmap-nav.track-active-right .bridge-rail,
+    .roadmap-nav.active-left .bridge-rail,
+    .roadmap-nav.active-right .bridge-rail,
+    .roadmap-nav.module-active-left .nav-bridge--secondary .bridge-rail,
+    .roadmap-nav.module-active-right .nav-bridge--secondary .bridge-rail {
+        background: var(--godot-blue);
+    }
+
+    .nav-tier-btn::before {
+        top: -10px;
+        height: 10px;
+    }
+
+    .tutorial-card-footer {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .tutorial-card-price {
+        align-self: flex-end;
+    }
+
+    .tutorial-card-meta {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+}
+
+/* Lesson detail */
+.breadcrumb {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+}
+
+.breadcrumb a {
+    text-decoration: none;
+}
+
+.lesson-badge {
+    font-size: 0.85rem;
+    color: var(--godot-blue);
+    font-weight: 600;
+}
+
+.lesson-nav {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border);
+    gap: 1rem;
+}
+
+.lesson-nav-link {
+    text-decoration: none;
+    font-weight: 500;
+    max-width: 45%;
+}
+
+.lesson-nav-link.prev { text-align: left; }
+.lesson-nav-link.next { text-align: right; margin-left: auto; }
+
+/* Lesson content renderer */
+.lesson-content h2 {
+    margin-top: 2rem;
+    margin-bottom: 0.75rem;
+    font-size: 1.25rem;
+    color: var(--godot-blue-dark);
+}
+
+.code-block {
+    background: var(--code-bg);
+    color: #c8e6ff;
+    padding: 1rem 1.25rem;
+    border-radius: 8px;
+    overflow-x: auto;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin: 1rem 0;
+}
+
+.inline-code {
+    background: #e8f0fa;
+    color: var(--godot-blue-dark);
+    padding: 0.1rem 0.35rem;
+    border-radius: 3px;
+    font-size: 0.9em;
+}
+
+.table-wrapper {
+    overflow-x: auto;
+    margin: 1rem 0;
+}
+
+.lesson-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.lesson-table th,
+.lesson-table td {
+    border: 1px solid var(--border);
+    padding: 0.5rem 0.75rem;
+    text-align: left;
+}
+
+.lesson-table th {
+    background: #e8f0fa;
+}
+
+/* Resources */
+.resource-section {
+    margin-bottom: 2rem;
+}
+
+.resource-list {
+    display: grid;
+    gap: 0.75rem;
+}
+
+.resource-link {
+    display: block;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1rem 1.25rem;
+    text-decoration: none;
+    color: inherit;
+    transition: border-color 0.2s;
+}
+
+.resource-link:hover {
+    border-color: var(--godot-blue);
+}
+
+.resource-link strong {
+    display: block;
+    color: var(--godot-blue);
+}
+
+.resource-link span {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+.resource-link.static {
+    cursor: default;
+}
+
+.not-found {
+    text-align: center;
+    padding: 3rem;
+}
+
+.empty-hint {
+    color: var(--text-secondary);
+    text-align: center;
+    padding: 2rem;
+}
+
+h1:focus {
+    outline: none;
+}
+
+.valid.modified:not([type=checkbox]) {
+    outline: 1px solid #26b050;
+}
+
+.invalid {
+    outline: 1px solid #e50000;
+}
+
+.validation-message {
+    color: #e50000;
+}
+
+.blazor-error-boundary {
+    background: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTYiIGhlaWdodD0iNDkiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIG92ZXJmbG93PSJoaWRkZW4iPjxkZWZzPjxjbGlwUGF0aCBpZD0iY2xpcDAiPjxyZWN0IHg9IjIzNSIgeT0iNTEiIHdpZHRoPSI1NiIgaGVpZ2h0PSI0OSIvPjwvY2xpcFBhdGg+PC9kZWZzPjxnIGNsaXAtcGF0aD0idXJsKCNjbGlwMCkiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0yMzUgLTUxKSI+PHBhdGggZD0iTTI2My41MDYgNTFDMjY0LjcxNyA1MSAyNjUuODEzIDUxLjQ4MzcgMjY2LjYwNiA1Mi4yNjU4TDI2Ny4wNTIgNTIuNzk4NyAyNjcuNTM5IDUzLjYyODMgMjkwLjE4NSA5Mi4xODMxIDI5MC41NDUgOTIuNzk1IDI5MC42NTYgOTIuOTk2QzI5MC44NzcgOTMuNTEzIDI5MSA5NC4wODE1IDI5MSA5NC42NzgyIDI5MSA5Ny4wNjUxIDI4OS4wMzggOTkgMjg2LjYxNyA5OUwyNDAuMzgzIDk5QzIzNy45NjMgOTkgMjM2IDk3LjA2NTEgMjM2IDk0LjY3ODIgMjM2IDk0LjM3OTkgMjM2LjAzMSA5NC4wODg2IDIzNi4wODkgOTMuODA3MkwyMzYuMzM4IDkzLjAxNjIgMjM2Ljg1OCA5Mi4xMzE0IDI1OS40NzMgNTMuNjI5NCAyNTkuOTYxIDUyLjc5ODUgMjYwLjQwNyA1Mi4yNjU4QzI2MS4yIDUxLjQ4MzcgMjYyLjI5NiA1MSAyNjMuNTA2IDUxWk0yNjMuNTg2IDY2LjAxODNDMjYwLjczNyA2Ni4wMTgzIDI1OS4zMTMgNjcuMTI0NSAyNTkuMzEzIDY5LjMzNyAyNTkuMzEzIDY5LjYxMDIgMjU5LjMzMiA2OS44NjA4IDI1OS4zNzEgNzAuMDg4N0wyNjEuNzk1IDg0LjAxNjEgMjY1LjM4IDg0LjAxNjEgMjY3LjgyMSA2OS43NDc1QzI2Ny44NiA2OS43MzA5IDI2Ny44NzkgNjkuNTg3NyAyNjcuODc5IDY5LjMxNzkgMjY3Ljg3OSA2Ny4xMTgyIDI2Ni40NDggNjYuMDE4MyAyNjMuNTg2IDY2LjAxODNaTTI2My41NzYgODYuMDU0N0MyNjEuMDQ5IDg2LjA1NDcgMjU5Ljc4NiA4Ny4zMDA1IDI1OS43ODYgODkuNzkyMSAyNTkuNzg2IDkyLjI4MzcgMjYxLjA0OSA5My41Mjk1IDI2My41NzYgOTMuNTI5NSAyNjYuMTE2IDkzLjUyOTUgMjY3LjM4NyA5Mi4yODM3IDI2Ny4zODcgODkuNzkyMSAyNjcuMzg3IDg3LjMwMDUgMjY2LjExNiA4Ni4wNTQ3IDI2My41NzYgODYuMDU0N1oiIGZpbGw9IiNGRkU1MDAiIGZpbGwtcnVsZT0iZXZlbm9kZCIvPjwvZz48L3N2Zz4=) no-repeat 1rem/1.8rem, #b32121;
+    padding: 1rem 1rem 1rem 3.7rem;
+    color: white;
+}
+
+.blazor-error-boundary::after {
+    content: "发生错误，请刷新页面重试。"
+}

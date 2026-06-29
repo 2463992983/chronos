@@ -1,0 +1,23 @@
+@using Godot_Learning_WebSite.Models
+
+<a class="tutorial-card" href="lesson/@Lesson.Slug">
+    <div class="tutorial-card-cover thumb-@Lesson.ThumbnailStyle">
+        <span class="tutorial-card-cover-title">@Lesson.ThumbnailTitle</span>
+        <span class="tutorial-card-cover-sub">@Lesson.ThumbnailSubtitle</span>
+    </div>
+    <h3 class="tutorial-card-name">《@Lesson.Title》</h3>
+    <div class="tutorial-card-footer">
+        <div class="tutorial-card-meta">
+            <span>课程状态：@Lesson.Status · 共@(Lesson.Sections.Length)节</span>
+            <span>录制时间：@Lesson.DateRange</span>
+        </div>
+        <span class="tutorial-card-price @(LessonPricing.IsFree(Lesson.Price) ? "is-free" : "is-paid")">
+            @LessonPricing.Format(Lesson.Price)
+        </span>
+    </div>
+</a>
+
+@code {
+    [Parameter, EditorRequired]
+    public Lesson Lesson { get; set; } = default!;
+}

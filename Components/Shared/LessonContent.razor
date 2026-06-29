@@ -1,0 +1,74 @@
+<div class="lesson-content">
+    @foreach (var block in Content)
+    {
+        @if (block.StartsWith("## "))
+        {
+            <h2>@block[3..]</h2>
+        }
+        else if (block.StartsWith("```"))
+        {
+            <pre class="code-block">@LessonContentHelper.ExtractCodeBlock(block)</pre>
+        }
+        else if (block.StartsWith("- "))
+        {
+            <ul>
+                @foreach (var line in block.Split('\n').Where(l => l.StartsWith("- ")))
+                {
+                    <li>@((MarkupString)LessonContentHelper.FormatInline(line[2..]))</li>
+                }
+            </ul>
+        }
+        else if (block.StartsWith("| "))
+        {
+            var rows = block.Split('\n')
+                .Where(r => !string.IsNullOrWhiteSpace(r) && !LessonContentHelper.IsTableSeparator(r))
+                .ToList();
+            <div class="table-wrapper">
+                <table class="lesson-table">
+                    <thead>
+                        <tr>
+                            @foreach (var cell in GetCells(rows[0]))
+                            {
+                                <th>@cell</th>
+                            }
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var row in rows.Skip(1))
+                        {
+                            <tr>
+                                @foreach (var cell in GetCells(row))
+                                {
+                                    <td>@cell</td>
+                                }
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        }
+        else if (block.Length > 2 && char.IsDigit(block[0]) && block[1] == '.')
+        {
+            <ol>
+                @foreach (var line in block.Split('\n').Where(l => l.Length > 2 && char.IsDigit(l[0])))
+                {
+                    var dotIndex = line.IndexOf('.');
+                    var text = dotIndex >= 0 ? line[(dotIndex + 1)..].Trim() : line;
+                    <li>@((MarkupString)LessonContentHelper.FormatInline(text))</li>
+                }
+            </ol>
+        }
+        else if (!string.IsNullOrWhiteSpace(block))
+        {
+            <p>@((MarkupString)LessonContentHelper.FormatInline(block))</p>
+        }
+    }
+</div>
+
+@code {
+    [Parameter, EditorRequired]
+    public string[] Content { get; set; } = [];
+
+    private static string[] GetCells(string row) =>
+        row.Split('|', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries);
+}
