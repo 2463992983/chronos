@@ -35,11 +35,11 @@ jobs:
         run: dotnet publish Godot_Learning_WebSite.csproj -c Release -o publish
 
       - name: Add SPA fallback
-        run: cp publish/index.html publish/404.html
+        run: cp publish/wwwroot/index.html publish/wwwroot/404.html
 
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: publish
+          path: publish/wwwroot
 
       - name: Deploy
         id: deployment
