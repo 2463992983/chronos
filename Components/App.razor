@@ -1,20 +1,16 @@
-﻿<!DOCTYPE html>
-<html lang="zh-CN">
-
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <base href="/" />
-    <link rel="stylesheet" href="bootstrap/bootstrap.min.css" />
-    <link rel="stylesheet" href="app.css" />
-    <link rel="stylesheet" href="Godot_Learning_WebSite.styles.css" />
-    <link rel="icon" type="image/png" href="favicon.png" />
-    <HeadOutlet />
-</head>
-
-<body>
-    <Routes />
-    <script src="_framework/blazor.web.js"></script>
-</body>
-
-</html>
+﻿<Router AppAssembly="@typeof(App).Assembly">
+    <Found Context="routeData">
+        <RouteView RouteData="routeData" DefaultLayout="typeof(MainLayout)" />
+        <FocusOnNavigate RouteData="routeData" Selector="h1" />
+    </Found>
+    <NotFound>
+        <PageTitle>页面未找到</PageTitle>
+        <LayoutView Layout="typeof(MainLayout)">
+            <div class="not-found">
+                <h1>页面未找到</h1>
+                <p>请检查地址是否正确。</p>
+                <a class="btn btn-godot" href="">返回首页</a>
+            </div>
+        </LayoutView>
+    </NotFound>
+</Router>
